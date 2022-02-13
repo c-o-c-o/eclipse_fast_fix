@@ -1,0 +1,3 @@
+LIBRARY eclipse_fast.auf
+EXPORTS
+GetFilterTable@0

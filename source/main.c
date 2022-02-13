@@ -31,16 +31,16 @@ THE SOFTWARE.
 /**************************************************************
 	eclipse fast
 
-	ƒtƒBƒ‹ƒ^ƒ_ƒCƒAƒƒO•\Ž¦‚‘¬‰»ƒpƒbƒ`
+	ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`
 
-	TAB•‚Í4
+	TABï¿½ï¿½ï¿½ï¿½4
 **************************************************************/
 #define CAPTIONSTR	"eclipse fast - "
 //------------------------
-//		ƒtƒBƒ‹ƒ^’è‹`
+//		ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½ï¿½`
 //------------------------
 TCHAR ef_caption[]		= "eclipse fast";
-TCHAR ef_information[]	= "eclipse fast version 1.00 (l’Œ”Å)";
+TCHAR ef_information[]	= "eclipse fast version 1.00 (ï¿½lï¿½ï¿½ï¿½ï¿½)";
 
 FILTER_DLL ef_filter = {
 	FILTER_FLAG_EX_INFORMATION | FILTER_FLAG_DISP_FILTER | FILTER_FLAG_ALWAYS_ACTIVE | FILTER_FLAG_WINDOW_THICKFRAME | FILTER_FLAG_WINDOW_SIZE,
@@ -72,12 +72,12 @@ EXTERN_C FILTER_DLL __declspec(dllexport) * __stdcall GetFilterTable(void){
 	return &ef_filter;
 }
 //------------------------
-//		ŠÖ”’è‹`
+//		ï¿½Öï¿½ï¿½ï¿½`
 //------------------------
-void research_init(HMODULE exedit, DWORD version);	//’²¸—p
-void free_patchs();	//ƒpƒbƒ`ŠJ•ú
+void research_init(HMODULE exedit, DWORD version);	//ï¿½ï¿½ï¿½ï¿½ï¿½p
+void free_patchs();	//ï¿½pï¿½bï¿½`ï¿½Jï¿½ï¿½
 HINSTANCE	g_ModuleInstsnce	= NULL;
-HWND		g_window			= NULL;//postmessage—p
+HWND		g_window			= NULL;//postmessageï¿½p
 HMODULE		g_patch_exedit		= NULL;
 DWORD		g_exedit_version	= 0;
 DWORD		g_patch_optionflg	= 0;//(1 == fast_dialog 2 == fast_grad, redrawwindow == 4, setredraw in efc window 8)
@@ -86,7 +86,7 @@ void ErrorMSGBox(const char *text, const char *caption){
 	MessageBox(NULL, text, caption, MB_TASKMODAL | MB_SETFOREGROUND | MB_TOPMOST | MB_ICONERROR | MB_OK);
 }
 //------------------------
-//		ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+//		ï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½g
 //------------------------
 typedef BOOL __stdcall(*TGradientFill)(HDC hdc, PTRIVERTEX pVertex, ULONG nVertex, PVOID pMesh, ULONG nMesh, ULONG ulMode);
 HMODULE msimg32 = 0;
@@ -111,20 +111,20 @@ EXTERN_C BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvRese
 	return TRUE;
 }
 /***********************************************
-	“®“Iƒpƒbƒ`‚ð“–‚Ä‚é
+	ï¿½ï¿½ï¿½Iï¿½pï¿½bï¿½`ï¿½ð“–‚Ä‚ï¿½
 
-	hooktarget	‘ÎÛ‚ÌƒAƒhƒŒƒX
-	jumpfunc	ƒAƒZƒ“ƒuƒŠ‘¤‚ÌƒR[ƒh‚ÌƒAƒhƒŒƒX
-	jumpback	®‡«ƒ`ƒFƒbƒN—p‚Ì•œ‹A—pƒR[ƒh‚Ö‚ÌƒAƒhƒŒƒX
-	check		Œ³‚Ìƒf[ƒ^‚ÌƒRƒs[(ŠÔˆá‚¢–hŽ~—pB)
-	patch		XVƒf[ƒ^
-	length		checkApatch‚ÌƒTƒCƒY
+	hooktarget	ï¿½ÎÛ‚ÌƒAï¿½hï¿½ï¿½ï¿½X
+	jumpfunc	ï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½[ï¿½hï¿½ÌƒAï¿½hï¿½ï¿½ï¿½X
+	jumpback	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½pï¿½Ì•ï¿½ï¿½Aï¿½pï¿½Rï¿½[ï¿½hï¿½Ö‚ÌƒAï¿½hï¿½ï¿½ï¿½X
+	check		ï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ÌƒRï¿½sï¿½[(ï¿½Ôˆá‚¢ï¿½hï¿½~ï¿½pï¿½B)
+	patch		ï¿½Xï¿½Vï¿½fï¿½[ï¿½^
+	length		checkï¿½Apatchï¿½ÌƒTï¿½Cï¿½Y
 
 	return
-		NULL‚Å¬Œ÷
-		Ž¸”sŽž‚É‚ÍƒGƒ‰[•¶Žš—ñB
+		NULLï¿½Åï¿½ï¿½ï¿½
+		ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É‚ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 ***********************************************/
-const char *VPGLE(){//ƒGƒ‰[•\Ž¦—p
+const char *VPGLE(){//ï¿½Gï¿½ï¿½ï¿½[ï¿½\ï¿½ï¿½ï¿½p
 	static char error[40];
 	DWORD gle	= GetLastError();
 	sprintf(error, "VirtualProtect::error GLE %X", gle);
@@ -136,73 +136,73 @@ const char *WritePatch(void *hooktarget, const void *jumpfunc, const void *jumpb
 			DWORD old				= 0;
 			patch[0]				= 0xE9;			//jmp func
 			(*(DWORD *)(patch + 1))	= (DWORD)jumpfunc - (DWORD)(hooktarget + 5);
-			if(VirtualProtect(hooktarget, length, PAGE_EXECUTE_READWRITE, &old)){	//read write‚É‘‚«Š·‚¦
-				memcpy(hooktarget, patch, length);					//ƒ}ƒ‹ƒ`ƒXƒŒƒbƒh‚ÅƒR[ƒh‚ÉƒAƒNƒZƒX‚³‚ê‚½‚çŽ€‚Ê
-				if(VirtualProtect(hooktarget, length, old, &old)){			//Œ³‚É–ß‚·
+			if(VirtualProtect(hooktarget, length, PAGE_EXECUTE_READWRITE, &old)){	//read writeï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				memcpy(hooktarget, patch, length);					//ï¿½}ï¿½ï¿½ï¿½`ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½ÅƒRï¿½[ï¿½hï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ê‚½ï¿½çŽ€ï¿½ï¿½
+				if(VirtualProtect(hooktarget, length, old, &old)){			//ï¿½ï¿½ï¿½É–ß‚ï¿½
 					return NULL;
 				}
 			}
 			return VPGLE();
 		}
-		return "WritePatch::®‡«ƒGƒ‰[(2)";
+		return "WritePatch::ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[(2)";
 	}
-	return "WritePatch::®‡«ƒGƒ‰[";
+	return "WritePatch::ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[";
 }
 /***********************************************
-	‰ðœ—pŠÈˆÕ
+	ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Èˆï¿½
 ***********************************************/
 const char *WriteUnPatch(DWORD hooktarget, const void *check, DWORD length){
 	BYTE *phooktarget		= ((BYTE *)g_patch_exedit) + hooktarget;
 	DWORD old				= 0;
-	if(VirtualProtect(phooktarget, length, PAGE_EXECUTE_READWRITE, &old)){	//read write‚É‘‚«Š·‚¦
-		memcpy(phooktarget, check, length);					//ƒ}ƒ‹ƒ`ƒXƒŒƒbƒh‚ÅƒR[ƒh‚ÉƒAƒNƒZƒX‚³‚ê‚½‚çŽ€‚Ê
-		if(VirtualProtect(phooktarget, length, old, &old)){			//Œ³‚É–ß‚·
+	if(VirtualProtect(phooktarget, length, PAGE_EXECUTE_READWRITE, &old)){	//read writeï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		memcpy(phooktarget, check, length);					//ï¿½}ï¿½ï¿½ï¿½`ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½ÅƒRï¿½[ï¿½hï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ê‚½ï¿½çŽ€ï¿½ï¿½
+		if(VirtualProtect(phooktarget, length, old, &old)){			//ï¿½ï¿½ï¿½É–ß‚ï¿½
 			return NULL;
 		}
 	}
 	return VPGLE();
 }
 /***********************************************
-	Ž©ŒÈ‰ü•Ï—pB
+	ï¿½ï¿½ï¿½È‰ï¿½ï¿½Ï—pï¿½B
 	patch_92_30500_hook
 	patch_93rc1_2b2a0_hook
-	‚É‚¨‚¢‚ÄƒIƒŠƒWƒiƒ‹ƒR[ƒh‚ÉƒAƒhƒŒƒX‚ªŠÜ‚Ü‚ê‚é‚½‚ßB
+	ï¿½É‚ï¿½ï¿½ï¿½ï¿½ÄƒIï¿½ï¿½ï¿½Wï¿½iï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ÉƒAï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Ü‚Ü‚ï¿½é‚½ï¿½ßB
 ***********************************************/
 const char *WriteSelfAddressPatch(DWORD hooktarget, DWORD check, DWORD patch){
 	DWORD *phooktarget		= (DWORD *)hooktarget;
 	if(memcmp(phooktarget, &check, sizeof(DWORD)) == 0){
 		DWORD old				= 0;
-		if(VirtualProtect(phooktarget, sizeof(DWORD), PAGE_EXECUTE_READWRITE, &old)){	//read write‚É‘‚«Š·‚¦
-			memcpy(phooktarget, &patch, sizeof(DWORD));					//ƒ}ƒ‹ƒ`ƒXƒŒƒbƒh‚ÅƒR[ƒh‚ÉƒAƒNƒZƒX‚³‚ê‚½‚çŽ€‚Ê
-			if(VirtualProtect(phooktarget, sizeof(DWORD), old, &old)){			//Œ³‚É–ß‚·
+		if(VirtualProtect(phooktarget, sizeof(DWORD), PAGE_EXECUTE_READWRITE, &old)){	//read writeï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			memcpy(phooktarget, &patch, sizeof(DWORD));					//ï¿½}ï¿½ï¿½ï¿½`ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½ÅƒRï¿½[ï¿½hï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ê‚½ï¿½çŽ€ï¿½ï¿½
+			if(VirtualProtect(phooktarget, sizeof(DWORD), old, &old)){			//ï¿½ï¿½ï¿½É–ß‚ï¿½
 				return NULL;
 			}
 		}
 		return VPGLE();
 	}
-	return "WriteSelfAddressPatch::®‡«ƒGƒ‰[";
+	return "WriteSelfAddressPatch::ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[";
 }
 /***********************************************
-	ƒtƒBƒ‹ƒ^ƒ_ƒCƒAƒƒO•`‰æ‘¬“x‚¤‚
+	ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½`ï¿½æ‘¬ï¿½xï¿½ï¿½ï¿½ï¿½
 ***********************************************/
-DWORD g_patch_fast_dialog_checkflg	= 4;//ƒIƒvƒVƒ‡ƒ“1 ŽžŠÔŒv‘ª, 2 •œ‹AƒIƒt, 4 –³Œø‰»
+DWORD g_patch_fast_dialog_checkflg	= 4;//ï¿½Iï¿½vï¿½Vï¿½ï¿½ï¿½ï¿½1 ï¿½ï¿½ï¿½ÔŒvï¿½ï¿½, 2 ï¿½ï¿½ï¿½Aï¿½Iï¿½t, 4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 DWORD g_patch_fast_dialog_time		= 0;
 DWORD g_patch_fast_dialog_tick		= 0;
-void *g_patch_fast_dialog_hook1	= NULL;	//ˆê‰ÓŠ–Ú
-void *g_patch_fast_dialog_hook2	= NULL;	//“ñ‰ÓŠ–Ú
-int g_patch_efc_check	= 0;			//ƒtƒBƒ‹ƒ^ƒ`ƒFƒbƒN
+void *g_patch_fast_dialog_hook1	= NULL;	//ï¿½ï¿½Óï¿½ï¿½ï¿½
+void *g_patch_fast_dialog_hook2	= NULL;	//ï¿½ï¿½Óï¿½ï¿½ï¿½
+int g_patch_efc_check	= 0;			//ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½`ï¿½Fï¿½bï¿½N
 
 //------------------------
-//		‘Oˆ—
+//		ï¿½Oï¿½ï¿½ï¿½ï¿½
 //------------------------
 void fast_dialog_enter_setredraw(DWORD globalhwndaddress){
-	HWND *pExtendedFilterClass = (HWND *)((BYTE *)(g_patch_exedit) + globalhwndaddress);	//ExtendedFilterClass‚ÌƒOƒ[ƒoƒ‹•Ï”ƒAƒhƒŒƒX(‘z’èŠO‚ÌDLL‚ÅŽÀs‚·‚é‚Æ“®ì‚Í–¢’èB)
+	HWND *pExtendedFilterClass = (HWND *)((BYTE *)(g_patch_exedit) + globalhwndaddress);	//ExtendedFilterClassï¿½ÌƒOï¿½ï¿½ï¿½[ï¿½oï¿½ï¿½ï¿½Ïï¿½ï¿½Aï¿½hï¿½ï¿½ï¿½X(ï¿½zï¿½ï¿½Oï¿½ï¿½DLLï¿½ÅŽï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Æ“ï¿½ï¿½ï¿½Í–ï¿½ï¿½ï¿½B)
 	if(pExtendedFilterClass != NULL && *pExtendedFilterClass != NULL){
 		SendMessage(*pExtendedFilterClass, WM_SETREDRAW, FALSE, 0);
 	}
 }
 //------------------------
-//		Œãˆ—
+//		ï¿½ãˆï¿½ï¿½
 //------------------------
 void fast_dialog_leave_setredraw(DWORD globalhwndaddress){
 	HWND *pExtendedFilterClass = (HWND *)((BYTE *)(g_patch_exedit) + globalhwndaddress);
@@ -214,7 +214,7 @@ void fast_dialog_leave_setredraw(DWORD globalhwndaddress){
 	}
 }
 //------------------------
-//		‘Oˆ—
+//		ï¿½Oï¿½ï¿½ï¿½ï¿½
 //------------------------
 void fast_dialog_enter(DWORD globalhwndaddress){
 	g_patch_efc_check	= 1;
@@ -226,36 +226,36 @@ void fast_dialog_enter(DWORD globalhwndaddress){
 	}
 }
 //------------------------
-//		Œãˆ—
+//		ï¿½ãˆï¿½ï¿½
 //------------------------
 void fast_dialog_leave(DWORD globalhwndaddress){
 	g_patch_efc_check	= 0;
 	if(g_patch_fast_dialog_checkflg & 4){
 		fast_dialog_leave_setredraw(globalhwndaddress);
 	}
-	if(g_patch_fast_dialog_checkflg & 1){//ŽžŠÔŒv‘ª
+	if(g_patch_fast_dialog_checkflg & 1){//ï¿½ï¿½ï¿½ÔŒvï¿½ï¿½
 		DWORD tick	= GetTickCount();
 		g_patch_fast_dialog_time	= tick - g_patch_fast_dialog_tick;
 		PostMessage(g_window, WM_USER, 0, 0);
 	}
 }
 //------------------------
-//		‘Oˆ—(ExtendedFilterClass‚©‚ç‚Ì‘€ì‚Ìê‡‚É’x‚¢‚Ì‚Å)
+//		ï¿½Oï¿½ï¿½ï¿½ï¿½(ExtendedFilterClassï¿½ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½ï¿½Ìê‡ï¿½É’xï¿½ï¿½ï¿½Ì‚ï¿½)
 //------------------------
 void fast_dialog_efc_enter(DWORD globalhwndaddress){
-	if(g_patch_efc_check == 0){//305e0‚©‚çŒÄ‚Î‚ê‚¸’P“Æ‚ÅŒÄ‚Î‚ê‚½ê‡
+	if(g_patch_efc_check == 0){//305e0ï¿½ï¿½ï¿½ï¿½Ä‚Î‚ê‚¸ï¿½Pï¿½Æ‚ÅŒÄ‚Î‚ê‚½ï¿½ê‡
 		if(g_patch_fast_dialog_checkflg & 4){
 			fast_dialog_enter_setredraw(globalhwndaddress);
 		}
 	}
 }
 //------------------------
-//		Œãˆ—
+//		ï¿½ãˆï¿½ï¿½
 //------------------------
 void fast_dialog_efc_leave(DWORD globalhwndaddress){
 	if(g_patch_efc_check == 0){
 		if(g_patch_fast_dialog_checkflg & 4){
-			if(g_patch_optionflg & 8){	//’P“Æ•œ‹AŽž‚Ésetredraw‚ðŒÄ‚Ô(•`‰æ‚·‚é)
+			if(g_patch_optionflg & 8){	//ï¿½Pï¿½Æ•ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½setredrawï¿½ï¿½ï¿½Ä‚ï¿½(ï¿½`ï¿½æ‚·ï¿½ï¿½)
 				fast_dialog_leave_setredraw(globalhwndaddress);
 			}
 		}
@@ -268,15 +268,15 @@ void fast_dialog_efc_leave(DWORD globalhwndaddress){
 	30500
 ***********************************************/
 //------------------------
-//		305e0‚Ìƒpƒbƒ`“K—p
+//		305e0ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 //------------------------
 BOOL patch_92_305e0(){
-	void patch_92_305e0_asm();	//ƒAƒZƒ“ƒuƒ‹ŠÖ”
+	void patch_92_305e0_asm();	//ï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Öï¿½
 	void patch_92_305e0_asm_back();
 
 	if(g_patch_fast_dialog_hook1 == NULL){
 		BYTE *f305e0		= ((BYTE *)g_patch_exedit) + 0x305e0;
-//100305e0‚ÌŠÖ”éBOOL __cdecl unknown(DWORD);‚©‚ÈH
+//100305e0ï¿½ÌŠÖï¿½ï¿½éBOOL __cdecl unknown(DWORD);ï¿½ï¿½ï¿½ÈH
 //100305e0:	81 ec 18 01 00 00    	sub    $0x118,%esp
 		const BYTE check[]	= {0x81, 0xec, 0x18, 0x01, 0x00, 0x00};
 		BYTE patch[] 		= {0x81, 0xec, 0x18, 0x01, 0x00, 0x00};
@@ -285,12 +285,12 @@ BOOL patch_92_305e0(){
 			g_patch_fast_dialog_hook1	= f305e0 + sizeof(check);
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_92_305e0 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_92_305e0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		305e0‚Ìƒpƒbƒ`‰ðœ
+//		305e0ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_92_305e0(){
 	if(g_patch_fast_dialog_hook1 != NULL){
@@ -300,27 +300,27 @@ BOOL unpatch_92_305e0(){
 			g_patch_fast_dialog_hook1	= NULL;
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"unpatch_92_305e0 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"unpatch_92_305e0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		30500‚Ìƒpƒbƒ`“K—p
+//		30500ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 //------------------------
 /*
-100306ab -> ’Êí
-ƒ}ƒEƒX‘€ìŒn‚Å‚ ‚é‚ª“à—e•s–¾
-100417c7  ƒtƒBƒ‹ƒ^[’Ç‰Á
+100306ab -> ï¿½Êï¿½
+ï¿½}ï¿½Eï¿½Xï¿½ï¿½ï¿½ï¿½nï¿½Å‚ï¿½ï¿½é‚ªï¿½ï¿½ï¿½eï¿½sï¿½ï¿½
+100417c7  ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½[ï¿½Ç‰ï¿½
 10041949  ?
 100419ea  ?
 10041add  ?
-10041b4e  ƒtƒBƒ‹ƒ^[íœ
-10041c64  ƒtƒBƒ‹ƒ^[ˆÚ“®
+10041b4e  ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½[ï¿½íœ
+10041c64  ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½[ï¿½Ú“ï¿½
 */
 void patch_92_30500_asm_back();
 
 BOOL patch_92_30500(){
-	void patch_92_30500_asm();	//ƒAƒZƒ“ƒuƒ‹ŠÖ”
+	void patch_92_30500_asm();	//ï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Öï¿½
 	if(g_patch_fast_dialog_hook2 == NULL){
 		BYTE movedaddr[4]	= {0, 0, 0, 0};
 		((DWORD *)movedaddr)[0]	=  (DWORD)(((BYTE *)g_patch_exedit) + 0x9a27c);
@@ -328,7 +328,7 @@ BOOL patch_92_30500(){
 		if(result == NULL){
 			BYTE *f30500		= ((BYTE *)g_patch_exedit) + 0x30500;
 /*
-10030500‚ÌŠÖ”évoid __cdecl unknown();‚©‚ÈH
+10030500ï¿½ÌŠÖï¿½ï¿½évoid __cdecl unknown();ï¿½ï¿½ï¿½ÈH
 10030500:	53                   	push   %ebx
 10030501:	55                   	push   %ebp
 10030502:	56                   	push   %esi
@@ -341,15 +341,15 @@ BOOL patch_92_30500(){
 				g_patch_fast_dialog_hook2	= f30500 + sizeof(check);
 				return TRUE;
 			}else{
-				ErrorMSGBox(result, CAPTIONSTR"patch_92_30500 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+				ErrorMSGBox(result, CAPTIONSTR"patch_92_30500 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 			}
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_92_30500 ƒpƒbƒ`“–‚Ä(Ž©ŒÈ‰ü•Ï)‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_92_30500 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½È‰ï¿½ï¿½ï¿½)ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		30500‚Ìƒpƒbƒ`‰ðœ
+//		30500ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_92_30500(){
 	if(g_patch_fast_dialog_hook2 != NULL){
@@ -363,16 +363,16 @@ BOOL unpatch_92_30500(){
 			if(result == NULL){
 				return TRUE;
 			}else{
-				ErrorMSGBox(result, CAPTIONSTR"unpatch_92_30500 ƒpƒbƒ`‰ðœ(Ž©ŒÈ‰ü•Ï)‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+				ErrorMSGBox(result, CAPTIONSTR"unpatch_92_30500 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½È‰ï¿½ï¿½ï¿½)ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 			}
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"unpatch_92_30500 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"unpatch_92_30500 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		ƒpƒbƒ`Ý’è
+//		ï¿½pï¿½bï¿½`ï¿½Ý’ï¿½
 //------------------------
 BOOL patch_fast_dialog_92(){
 	if(patch_92_305e0()){
@@ -382,14 +382,14 @@ BOOL patch_fast_dialog_92(){
 	return FALSE;
 }
 //------------------------
-//		ƒpƒbƒ`‰ðœ
+//		ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 void unpatch_fast_dialog_92(){
 	unpatch_92_305e0();
 	unpatch_92_30500();
 }
 //------------------------
-//		ˆ—
+//		ï¿½ï¿½ï¿½ï¿½
 //------------------------
 void Patch_92_305e0_enter(){fast_dialog_enter(0x1539c8);}
 void Patch_92_305e0_leave(){fast_dialog_leave(0x1539c8);}
@@ -397,21 +397,21 @@ void Patch_92_30500_enter(){fast_dialog_efc_enter(0x1539c8);}
 void Patch_92_30500_leave(){fast_dialog_efc_leave(0x1539c8);}
 /***********************************************
 	version 0.93rc1
-	ƒtƒBƒ‹ƒ^ƒ_ƒCƒAƒƒO•`‰æ‘¬“x‚¤‚
+	ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½`ï¿½æ‘¬ï¿½xï¿½ï¿½ï¿½ï¿½
 _2b2a0
 _2b390
 ***********************************************/
 
 //------------------------
-//		2b390‚Ìƒpƒbƒ`“K—p
+//		2b390ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 //------------------------
 BOOL patch_93rc1_2b390(){
-	void patch_93rc1_2b390_asm();	//ƒAƒZƒ“ƒuƒ‹ŠÖ”
+	void patch_93rc1_2b390_asm();	//ï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Öï¿½
 	void patch_93rc1_2b390_asm_back();
 
 	if(g_patch_fast_dialog_hook1 == NULL){
 		BYTE *f2b390		= ((BYTE *)g_patch_exedit) + 0x2b390;
-/*1002b390‚ÌŠÖ”éBOOL __fastcall(microsoft) unknown(DWORD);‚©‚ÈH
+/*1002b390ï¿½ÌŠÖï¿½ï¿½éBOOL __fastcall(microsoft) unknown(DWORD);ï¿½ï¿½ï¿½ÈH
 1002b390:	55                   	push   %ebp
 1002b391:	8b ec                	mov    %esp,%ebp
 1002b393:	83 e4 f8             	and    $0xfffffff8,%esp*/
@@ -422,12 +422,12 @@ BOOL patch_93rc1_2b390(){
 			g_patch_fast_dialog_hook1	= f2b390 + sizeof(check);
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b390 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b390 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		2b390‚Ìƒpƒbƒ`‰ðœ
+//		2b390ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_93rc1_2b390(){
 	if(g_patch_fast_dialog_hook1 != NULL){
@@ -437,23 +437,23 @@ BOOL unpatch_93rc1_2b390(){
 			g_patch_fast_dialog_hook1	= NULL;
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b390 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b390 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		2b2a0‚Ìƒpƒbƒ`“K—p
+//		2b2a0ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 //------------------------
 void patch_93rc1_2b2a0_asm_back();
 BOOL patch_93rc1_2b2a0(){
-	void patch_93rc1_2b2a0_asm();	//ƒAƒZƒ“ƒuƒ‹ŠÖ”
+	void patch_93rc1_2b2a0_asm();	//ï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Öï¿½
 
 	if(g_patch_fast_dialog_hook2 == NULL){
 		BYTE *f2b2a0		= ((BYTE *)g_patch_exedit) + 0x2b2a0;
-/*1002b2a0‚ÌŠÖ”évoid __fastcall(microsoft) unknown(DWORD);‚©‚ÈH
+/*1002b2a0ï¿½ÌŠÖï¿½ï¿½évoid __fastcall(microsoft) unknown(DWORD);ï¿½ï¿½ï¿½ÈH
 1002b2a0:	53                   	push   %ebx
 1002b2a1:	56                   	push   %esi
-1002b2a2:	8b 35 84 93 0a 10    	mov    0x100a9384,%esi//0x100a9384ƒRƒR‚ªØ‚è‘Ö‚í‚é‚Ì‚©
+1002b2a2:	8b 35 84 93 0a 10    	mov    0x100a9384,%esi//0x100a9384ï¿½Rï¿½Rï¿½ï¿½ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½Ì‚ï¿½
 */
 		BYTE movedaddr[4]	= {0, 0, 0, 0};
 		((DWORD *)movedaddr)[0]	=  (DWORD)(((BYTE *)g_patch_exedit) + 0xa9384);
@@ -467,15 +467,15 @@ BOOL patch_93rc1_2b2a0(){
 				g_patch_fast_dialog_hook2	= f2b2a0 + sizeof(check);
 				return TRUE;
 			}else{
-				ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b2a0 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+				ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b2a0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 			}
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b2a0 ƒpƒbƒ`“–‚Ä(Ž©ŒÈ‰ü•Ï)‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_2b2a0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½È‰ï¿½ï¿½ï¿½)ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		30500‚Ìƒpƒbƒ`‰ðœ
+//		30500ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_93rc1_2b2a0(){
 	if(g_patch_fast_dialog_hook2 != NULL){
@@ -489,16 +489,16 @@ BOOL unpatch_93rc1_2b2a0(){
 			if(result == NULL){
 				return TRUE;
 			}else{
-				ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b2a0 ƒpƒbƒ`‰ðœ(Ž©ŒÈ‰ü•Ï)‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+				ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b2a0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½È‰ï¿½ï¿½ï¿½)ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 			}
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b2a0 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_2b2a0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		ƒpƒbƒ`Ý’è
+//		ï¿½pï¿½bï¿½`ï¿½Ý’ï¿½
 //------------------------
 BOOL patch_fast_dialog_93rc1(){
 	if(patch_93rc1_2b390()){
@@ -508,26 +508,26 @@ BOOL patch_fast_dialog_93rc1(){
 	return FALSE;
 }
 //------------------------
-//		ƒpƒbƒ`‰ðœ
+//		ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 void unpatch_fast_dialog_93rc1(){
 	unpatch_93rc1_2b390();
 	unpatch_93rc1_2b2a0();
 }
 //------------------------
-//		ˆ—
+//		ï¿½ï¿½ï¿½ï¿½
 //------------------------
 void Patch_93rc1_2b390_enter(){fast_dialog_enter(0xec060);}
 void Patch_93rc1_2b390_leave(){fast_dialog_leave(0xec060);}
 void Patch_93rc1_2b2a0_enter(){fast_dialog_efc_enter(0xec060);}
 void Patch_93rc1_2b2a0_leave(){fast_dialog_efc_leave(0xec060);}
 /***********************************************
-	ƒOƒ‰ƒf[ƒVƒ‡ƒ“•`‰æ‘¬“x‚¤‚
+	ï¿½Oï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½æ‘¬ï¿½xï¿½ï¿½ï¿½ï¿½
 ***********************************************/
-void *g_patch_fast_gradradation_hook	= NULL;	//ˆê‰ÓŠ–Ú
+void *g_patch_fast_gradradation_hook	= NULL;	//ï¿½ï¿½Óï¿½ï¿½ï¿½
 DWORD g_patch_fast_gradradation_flag	= 0;
 //------------------------
-//		ŠÈˆÕƒOƒ‰ƒf[ƒVƒ‡ƒ“
+//		ï¿½ÈˆÕƒOï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½
 //------------------------
 
 int getRValue(COLORREF c) { return ((c) & 0xff); }
@@ -548,8 +548,8 @@ float clamp(float min, float v, float max) {
 
 void patch_simpleFillGradation(HDC hdc, const RECT *rc, DWORD c1, DWORD c2, int gs, int ge){
     if (gradientFill == NULL) {
-	SetDCBrushColor(hdc, c1);
-	FillRect(hdc, rc, GetStockObject(DC_BRUSH));
+		SetDCBrushColor(hdc, c1);
+		FillRect(hdc, rc, GetStockObject(DC_BRUSH));
         return;
     }
 
@@ -569,39 +569,39 @@ void patch_simpleFillGradation(HDC hdc, const RECT *rc, DWORD c1, DWORD c2, int 
 
     /* -------------------------------------------- */
     if (gs == rc->left && ge < rc->right) {
-	flrc[1] = *rc;
+		flrc[1] = *rc;
 
         grc.right = ge;
         flrc[1].left = ge;
-	flc[1] = &c2;
+		flc[1] = &c2;
     }
 
     if (gs > rc->left && ge == rc->right) {
-	flrc[0] = *rc;
+		flrc[0] = *rc;
 
         grc.left = gs;
         flrc[0].right = gs;
-	flc[0] = &c1;
+		flc[0] = &c1;
     }
 
     /* -------------------------------------------- */
     TRIVERTEX vert[2] = {
         {
-	    rc->left,
-	    rc->top, 
-	    c1r - ((char)((c1r - c2r) * sps)) << 8,
-	    c1g - ((char)((c1g - c2g) * sps)) << 8,
-	    c1b - ((char)((c1b - c2b) * sps)) << 8,
-	    0
-	},
+			grc.left,
+			grc.top, 
+			c1r - ((char)((c1r - c2r) * sps)) << 8,
+			c1g - ((char)((c1g - c2g) * sps)) << 8,
+			c1b - ((char)((c1b - c2b) * sps)) << 8,
+			0
+		},
         {
-	    rc->right,
-	    rc->bottom,
-	    c1r - ((char)((c1r - c2r) * eps)) << 8,
-	    c1g - ((char)((c1g - c2g) * eps)) << 8,
-	    c1b - ((char)((c1b - c2b) * eps)) << 8,
-	    0
-	},
+			grc.right,
+			grc.bottom,
+			c1r - ((char)((c1r - c2r) * eps)) << 8,
+			c1g - ((char)((c1g - c2g) * eps)) << 8,
+			c1b - ((char)((c1b - c2b) * eps)) << 8,
+			0
+		},
     };
     GRADIENT_RECT rect = {0, 1};
 
@@ -612,7 +612,7 @@ void patch_simpleFillGradation(HDC hdc, const RECT *rc, DWORD c1, DWORD c2, int 
         if (flc[i] == NULL) {
             continue;
         }
-	SetDCBrushColor(hdc, *flc[i]);
+		SetDCBrushColor(hdc, *flc[i]);
         FillRect(hdc, &flrc[i], GetStockObject(DC_BRUSH));
     }
 }
@@ -621,7 +621,7 @@ void patch_simpleFillGradation(HDC hdc, const RECT *rc, DWORD c1, DWORD c2, int 
 ***********************************************/
 void patch_92_36a70_call(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);
 //------------------------
-//		32ce0‚ÌŒÄ‚Ño‚µŠÖ”
+//		32ce0ï¿½ÌŒÄ‚Ñoï¿½ï¿½ï¿½Öï¿½
 //------------------------
 void patch_92_FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge){
 	if(g_patch_fast_gradradation_flag & 1){
@@ -638,13 +638,13 @@ void patch_92_FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYT
 	}
 }
 /***********************************************
-	36a70‚Ìƒpƒbƒ`“K—p
+	36a70ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 ***********************************************/
 BOOL patch_92_36a70(){
 	if(g_patch_fast_gradradation_hook == NULL){
 		BYTE *f36a70		= ((BYTE *)g_patch_exedit) + 0x36a70;
 /*
-36a70‚ÌŠÖ”évoid FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);‚©‚ÈH
+36a70ï¿½ÌŠÖï¿½ï¿½évoid FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);ï¿½ï¿½ï¿½ÈH
 
 10036a70:	83 ec 14             	sub    $0x14,%esp
 10036a73:	53                   	push   %ebx
@@ -657,12 +657,12 @@ BOOL patch_92_36a70(){
 			g_patch_fast_gradradation_hook	= f36a70 + sizeof(check);
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_92_f36a70 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_92_f36a70 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		36a70‚Ìƒpƒbƒ`‰ðœ
+//		36a70ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_92_36a70(){
 	if(g_patch_fast_gradradation_hook != NULL){
@@ -672,7 +672,7 @@ BOOL unpatch_92_36a70(){
 			g_patch_fast_gradradation_hook	= NULL;
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_92_36a70 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_92_36a70 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
@@ -680,12 +680,12 @@ BOOL unpatch_92_36a70(){
 	version 0.93rc1
 ***********************************************/
 //------------------------
-//		32ce0‚ÌŒÄ‚Ño‚µŠÖ”
+//		32ce0ï¿½ÌŒÄ‚Ñoï¿½ï¿½ï¿½Öï¿½
 //------------------------
 void patch_93rc1_FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge){
 void patch_93rc1_32ce0_call(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);
 	if(g_patch_fast_gradradation_flag & 1){
-		patch_93rc1_32ce0_call(hdc, rc, r, g, b, gr, gg, gb, gs, ge);//ƒIƒŠƒWƒiƒ‹ŒÄ‚Ño‚µ
+		patch_93rc1_32ce0_call(hdc, rc, r, g, b, gr, gg, gb, gs, ge);//ï¿½Iï¿½ï¿½ï¿½Wï¿½iï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½
 	}else{
 		DWORD col	= r | (b << 16) | (g << 8);
 		DWORD gcol	= gr | (gb << 16) | (gg << 8);
@@ -698,15 +698,15 @@ void patch_93rc1_32ce0_call(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYT
 	}
 }
 /***********************************************
-		32ce0‚Ìƒpƒbƒ`“K—p
+		32ce0ï¿½Ìƒpï¿½bï¿½`ï¿½Kï¿½p
 ***********************************************/
 BOOL patch_93rc1_32ce0(){
-	void patch_93rc1_32ce0_asm();	//ŒÄ‚Ño‚µ
-	void patch_93rc1_32ce0_callf();	//ƒ`ƒFƒbƒN—p
+	void patch_93rc1_32ce0_asm();	//ï¿½Ä‚Ñoï¿½ï¿½
+	void patch_93rc1_32ce0_callf();	//ï¿½`ï¿½Fï¿½bï¿½Nï¿½p
 	if(g_patch_fast_gradradation_hook == NULL){
 		BYTE *f32ce0		= ((BYTE *)g_patch_exedit) + 0x32ce0;
 /*
-36a70‚ÌŠÖ”évoid (__fastcall+__cdecl‚à‚Ç‚«) FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);‚©‚ÈH
+36a70ï¿½ÌŠÖï¿½ï¿½évoid (__fastcall+__cdeclï¿½ï¿½ï¿½Ç‚ï¿½) FillGradation(HDC hdc, const RECT *rc, BYTE r, BYTE g, BYTE b, BYTE gr, BYTE gg, BYTE gb, int gs, int ge);ï¿½ï¿½ï¿½ÈH
 
 10032ce0:	55                   	push   %ebp
 10032ce1:	8b ec                	mov    %esp,%ebp
@@ -719,12 +719,12 @@ BOOL patch_93rc1_32ce0(){
 			g_patch_fast_gradradation_hook	= f32ce0 + sizeof(check);
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_32ce0 ƒpƒbƒ`“–‚Ä‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"patch_93rc1_32ce0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 //------------------------
-//		36a70‚Ìƒpƒbƒ`‰ðœ
+//		36a70ï¿½Ìƒpï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
 //------------------------
 BOOL unpatch_93rc1_32ce0(){
 	if(g_patch_fast_gradradation_hook != NULL){
@@ -734,63 +734,63 @@ BOOL unpatch_93rc1_32ce0(){
 			g_patch_fast_gradradation_hook	= NULL;
 			return TRUE;
 		}else{
-			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_32ce0 ƒpƒbƒ`‰ðœ‚ÉŽ¸”s‚µ‚Ü‚µ‚½");
+			ErrorMSGBox(result, CAPTIONSTR"unpatch_93rc1_32ce0 ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
 		}
 	}
 }
 /***********************************************
-	ƒpƒbƒ`‘SŠJ•ú
-	ŒÃ‚¢ƒo[ƒWƒ‡ƒ“—p‚Ì‚ªŽc‚Á‚Ä‚¢‚é‚¾‚¯
+	ï¿½pï¿½bï¿½`ï¿½Sï¿½Jï¿½ï¿½
+	ï¿½Ã‚ï¿½ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Ì‚ï¿½ï¿½cï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚¾ï¿½ï¿½
 ***********************************************/
 void free_patchs(){
-/*	unpatch_fast_dialog_92();		//‚í‚´‚í‚´ƒGƒ‰[‹N‚±‚·‰Â”\«‚ª‚ ‚é‚Ì‚ðŽÀs‚·‚é‚Ì‚à‚ ‚ê‚¾‚µ(ƒAƒ“ƒ[ƒh‚³‚ê‚Ä‚½‚ç—Ž‚¿‚é)
+/*	unpatch_fast_dialog_92();		//ï¿½í‚´ï¿½í‚´ï¿½Gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ê‚¾ï¿½ï¿½(ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ç—Žï¿½ï¿½ï¿½ï¿½)
 	unpatch_fast_dialog_93rc1();
 	unpatch_92_36a70();
 	unpatch_93rc1_32ce0();*/
-	g_patch_fast_dialog_hook1		= NULL;	//ˆê‰ÓŠ–Ú
-	g_patch_fast_dialog_hook2		= NULL;	//“ñ‰ÓŠ–Ú
+	g_patch_fast_dialog_hook1		= NULL;	//ï¿½ï¿½Óï¿½ï¿½ï¿½
+	g_patch_fast_dialog_hook2		= NULL;	//ï¿½ï¿½Óï¿½ï¿½ï¿½
 	g_patch_fast_gradradation_hook	= NULL;
 	g_patch_exedit	= NULL;
 }
 /***********************************************
-	Šg’£•ÒW‚Ìƒo[ƒWƒ‡ƒ“Žæ“¾
-	return 0‚Å•s–¾
-		9200‚Å version 0.92
-		9301‚Å version 0.93 rc1
+	ï¿½gï¿½ï¿½ï¿½ÒWï¿½Ìƒoï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
+	return 0ï¿½Å•sï¿½ï¿½
+		9200ï¿½ï¿½ version 0.92
+		9301ï¿½ï¿½ version 0.93 rc1
 ***********************************************/
 DWORD get_exedit_version(HMODULE exedit){
-	//GetFilterTableListB’Êí‚Íreturn‚·‚é‚¾‚¯‚È‚Ì‚ÅŽg—p‚µ‚Ä‚à–â‘è‚È‚¢‚ÆŽv‚í‚ê‚éB
+	//GetFilterTableListï¿½Bï¿½Êï¿½ï¿½returnï¿½ï¿½ï¿½é‚¾ï¿½ï¿½ï¿½È‚Ì‚ÅŽgï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆŽvï¿½ï¿½ï¿½ï¿½B
 	void *pfunc	= GetProcAddress(exedit, "GetFilterTableList");
 	if(pfunc != NULL){
 		FILTER_DLL **pfd_exedit	= ((FILTER_DLL ** __stdcall (*)())pfunc)();
 		if(pfd_exedit != NULL && pfd_exedit[0] != NULL){
 			TCHAR *information	= pfd_exedit[0]->information;
 			if(information != NULL){
-				if(strcmp(information, "Šg’£•ÒW(exedit) version 0.92 by ‚j‚d‚m‚­‚ñ") == 0){//ƒo[ƒWƒ‡ƒ“ƒ`ƒFƒbƒN
+				if(strcmp(information, "ï¿½gï¿½ï¿½ï¿½ÒW(exedit) version 0.92 by ï¿½jï¿½dï¿½mï¿½ï¿½ï¿½ï¿½") == 0){//ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
 					void *funcptr	= ((BYTE *)exedit) + 0x2b0c0;
 					if(funcptr == pfunc){
 						return 9200;
 					}else{
-						ErrorMSGBox("Šg’£•ÒW‚Ì“à—e•s®‡(v0.92)", CAPTIONSTR"get_exedit_version");
+						ErrorMSGBox("ï¿½gï¿½ï¿½ï¿½ÒWï¿½Ì“ï¿½ï¿½eï¿½sï¿½ï¿½ï¿½ï¿½(v0.92)", CAPTIONSTR"get_exedit_version");
 					}
-				}else if(strcmp(information, "Šg’£•ÒW(exedit) version 0.93rc1 by ‚j‚d‚m‚­‚ñ") == 0){
+				}else if(strcmp(information, "ï¿½gï¿½ï¿½ï¿½ÒW(exedit) version 0.93rc1 by ï¿½jï¿½dï¿½mï¿½ï¿½ï¿½ï¿½") == 0){
 					void *funcptr	= ((BYTE *)exedit) + 0x252f0;
 					if(funcptr == pfunc){
 						return 9301;
 					}else{
-						ErrorMSGBox("Šg’£•ÒW‚Ì“à—e•s®‡(v0.93rc1)", CAPTIONSTR"get_exedit_version");
+						ErrorMSGBox("ï¿½gï¿½ï¿½ï¿½ÒWï¿½Ì“ï¿½ï¿½eï¿½sï¿½ï¿½ï¿½ï¿½(v0.93rc1)", CAPTIONSTR"get_exedit_version");
 					}
 				}else{
-					ErrorMSGBox(information, CAPTIONSTR"get_exedit_version ‘Î‰ž‚µ‚Ä‚¢‚È‚¢ƒo[ƒWƒ‡ƒ“H");
+					ErrorMSGBox(information, CAPTIONSTR"get_exedit_version ï¿½Î‰ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½H");
 				}
 			}else{
-				ErrorMSGBox("Šg’£•ÒW‚ÌFILTER_DLL information‚Ìî•ñ‚ª‘¶Ý‚µ‚È‚¢(ƒo[ƒWƒ‡ƒ“‚ð“Á’è‚Å‚«‚È‚¢)", CAPTIONSTR"get_exedit_version");
+				ErrorMSGBox("ï¿½gï¿½ï¿½ï¿½ÒWï¿½ï¿½FILTER_DLL informationï¿½Ìï¿½ñ‚ª‘ï¿½ï¿½Ý‚ï¿½ï¿½È‚ï¿½(ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½)", CAPTIONSTR"get_exedit_version");
 			}
 		}else{
-			ErrorMSGBox("FILTER_DLL‚Ì“à—e‚ªˆÙí", CAPTIONSTR"get_exedit_version");
+			ErrorMSGBox("FILTER_DLLï¿½Ì“ï¿½ï¿½eï¿½ï¿½ï¿½Ùï¿½", CAPTIONSTR"get_exedit_version");
 		}
 	}else{
-		ErrorMSGBox("Šg’£•ÒW‚Å‚Í‚È‚¢‚©”j‘¹‚µ‚Ä‚¢‚éH", CAPTIONSTR"get_exedit_version");
+		ErrorMSGBox("ï¿½gï¿½ï¿½ï¿½ÒWï¿½Å‚Í‚È‚ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½H", CAPTIONSTR"get_exedit_version");
 	}
 	return 0;
 }
@@ -805,7 +805,7 @@ DWORD get_exedit_version(HMODULE exedit){
 #define IDC_CTL6			105
 #define IDC_CTL3_1			106
 BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *editp, FILTER *fp){
-	//	TRUE‚ð•Ô‚·‚Æ‘S‘Ì‚ªÄ•`‰æ‚³‚ê‚é
+	//	TRUEï¿½ï¿½Ô‚ï¿½ï¿½Æ‘Sï¿½Ì‚ï¿½ï¿½Ä•`ï¿½æ‚³ï¿½ï¿½ï¿½
 	switch(message) {
 		case WM_FILTER_INIT:
 		{
@@ -824,22 +824,22 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 		return FALSE;
 		case WM_USER+1:
 		{
-			HMODULE	exedit	= GetModuleHandle("exedit.auf");	//“Ç‚Ýž‚Ü‚ê‚Ä‚¢‚éŠg’£•ÒW.auf
+			HMODULE	exedit	= GetModuleHandle("exedit.auf");	//ï¿½Ç‚Ýï¿½ï¿½Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ÒW.auf
 			if(exedit != NULL){
 				DWORD 	i	= 3;
-				HWND		t_chk1	= CreateWindow("BUTTON", "ƒtƒBƒ‹ƒ^[ƒ_ƒCƒAƒƒO‚‘¬‰»ƒpƒbƒ`‚ð“–‚Ä‚é", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
+				HWND		t_chk1	= CreateWindow("BUTTON", "ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½[ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ð“–‚Ä‚ï¿½", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
 				3, i, 300, 25, hwnd, (HMENU)IDC_CTL1, g_ModuleInstsnce, NULL);
-				HWND		t_chk2	= CreateWindow("BUTTON", "ŽÀsŽžŠÔŒv‘ª", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
+				HWND		t_chk2	= CreateWindow("BUTTON", "ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÔŒvï¿½ï¿½", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL2, g_ModuleInstsnce, NULL);
-				HWND		t_chk3_1	= CreateWindow("BUTTON", "’P“Æ•œ‹AŽž‚É•`‰æ‚·‚é", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
+				HWND		t_chk3_1	= CreateWindow("BUTTON", "ï¿½Pï¿½Æ•ï¿½ï¿½Aï¿½ï¿½ï¿½É•`ï¿½æ‚·ï¿½ï¿½", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL3_1, g_ModuleInstsnce, NULL);
-				HWND		t_chk3	= CreateWindow("BUTTON", "RedrawWindow‚ðŽg—p", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
+				HWND		t_chk3	= CreateWindow("BUTTON", "RedrawWindowï¿½ï¿½ï¿½gï¿½p", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL3, g_ModuleInstsnce, NULL);
-				HWND		t_chk4	= CreateWindow("BUTTON", "ƒtƒBƒ‹ƒ^[ƒ_ƒCƒAƒƒO‚‘¬‰»ƒpƒbƒ`‚ðˆêŽž–³Œø‰»", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
+				HWND		t_chk4	= CreateWindow("BUTTON", "ï¿½tï¿½Bï¿½ï¿½ï¿½^ï¿½[ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½êŽžï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL4, g_ModuleInstsnce, NULL);
-				HWND		t_chk5	= CreateWindow("BUTTON", "ƒOƒ‰ƒf[ƒVƒ‡ƒ“•`‰æŠÈ—ª‰»ƒpƒbƒ`‚ð“–‚Ä‚é", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
+				HWND		t_chk5	= CreateWindow("BUTTON", "ï¿½Oï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½È—ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ð“–‚Ä‚ï¿½", WS_CHILD | WS_VISIBLE | BS_CHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL5, g_ModuleInstsnce, NULL);
-				HWND		t_chk6	= CreateWindow("BUTTON", "ƒOƒ‰ƒf[ƒVƒ‡ƒ“•`‰æŠÈ—ª‰»ƒpƒbƒ`‚ðˆêŽž–³Œø‰»", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
+				HWND		t_chk6	= CreateWindow("BUTTON", "ï¿½Oï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½È—ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½êŽžï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 
 				3, i+=25, 300, 25, hwnd, (HMENU)IDC_CTL6, g_ModuleInstsnce, NULL);
 				SYS_INFO	si;
 				if(fp->exfunc->get_sys_info(editp, &si)){
@@ -864,7 +864,7 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 					SendMessage(t_chk3_1, BM_SETCHECK, (WPARAM)BST_CHECKED, 0);
 				}
 				DWORD ev	= get_exedit_version(exedit);
-			//	research_init(exedit, ev);	//ƒfƒoƒbƒO—p
+			//	research_init(exedit, ev);	//ï¿½fï¿½oï¿½bï¿½Oï¿½p
 				g_patch_exedit		= exedit;
 				g_exedit_version	= ev;
 				if(ev == 9200){
@@ -897,7 +897,7 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 					SendMessage(t_chk5, BM_SETCHECK, (WPARAM)BST_UNCHECKED, 0);
 				}
 			}else{
-				ErrorMSGBox("Šg’£•ÒW‚ªƒ[ƒh‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ", CAPTIONSTR"FILTER_INIT");
+				ErrorMSGBox("ï¿½gï¿½ï¿½ï¿½ÒWï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½", CAPTIONSTR"FILTER_INIT");
 			}
 		}
 		return FALSE;
@@ -905,7 +905,7 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 		{
 			int wmId = LOWORD(wparam); 
 			switch(wmId){
-				case IDC_CTL1://ƒ_ƒCƒAƒƒO‚‘¬‰»ƒpƒbƒ`‚ð“–‚Ä‚é
+				case IDC_CTL1://ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ð“–‚Ä‚ï¿½
 				{
 					g_patch_optionflg	^= 1;
 					if(g_patch_optionflg & 1){
@@ -928,29 +928,29 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 					SendMessage(GetDlgItem(hwnd, IDC_CTL1), BM_SETCHECK, (WPARAM)(g_patch_optionflg & 1) ? BST_CHECKED : BST_UNCHECKED, 0);
 				}
 				break;
-				case IDC_CTL2://ŽÀsŽžŠÔŒv‘ª
+				case IDC_CTL2://ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÔŒvï¿½ï¿½
 				{
-					if(g_patch_fast_dialog_checkflg & 1)SetWindowText(GetDlgItem(hwnd, IDC_CTL2), "ŽÀsŽžŠÔŒv‘ª");
+					if(g_patch_fast_dialog_checkflg & 1)SetWindowText(GetDlgItem(hwnd, IDC_CTL2), "ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÔŒvï¿½ï¿½");
 					g_patch_fast_dialog_checkflg	^= 1;
 				}
 				break;
-				case IDC_CTL3_1://•`‰æ•œ‹A‚ðŽg—p
+				case IDC_CTL3_1://ï¿½`ï¿½æ•œï¿½Aï¿½ï¿½ï¿½gï¿½p
 				{
 					g_patch_optionflg	^= 8;
 					SendMessage(GetDlgItem(hwnd, IDC_CTL3_1), BM_SETCHECK, (WPARAM)(g_patch_optionflg & 8) ? BST_CHECKED : BST_UNCHECKED, 0);
 				}
 				break;
-				case IDC_CTL3://RedrawWindow‚ðŽg—p
+				case IDC_CTL3://RedrawWindowï¿½ï¿½ï¿½gï¿½p
 				{
 					g_patch_optionflg	^= 4;
 				}
 				break;
-				case IDC_CTL4://ƒ_ƒCƒAƒƒO‚‘¬‰»ƒpƒbƒ`‚ðˆêŽž–³Œø‰»
+				case IDC_CTL4://ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½êŽžï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				{
 					g_patch_fast_dialog_checkflg	^= 4;
 				}
 				break;
-				case IDC_CTL5://ƒOƒ‰ƒf[ƒVƒ‡ƒ“•`‰æ‚‘¬‰»ƒpƒbƒ`‚ð“–‚Ä‚é
+				case IDC_CTL5://ï¿½Oï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½æ‚ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ð“–‚Ä‚ï¿½
 				{
 					g_patch_optionflg	^= 2;
 					if(g_patch_optionflg & 2){
@@ -973,7 +973,7 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 					SendMessage(GetDlgItem(hwnd, IDC_CTL5), BM_SETCHECK, (WPARAM)(g_patch_optionflg & 2) ? BST_CHECKED : BST_UNCHECKED, 0);
 				}
 				break;
-				case IDC_CTL6://ƒOƒ‰ƒf[ƒVƒ‡ƒ“•`‰æ‚‘¬‰»ƒpƒbƒ`‚ðˆêŽž–³Œø‰»
+				case IDC_CTL6://ï¿½Oï¿½ï¿½ï¿½fï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½æ‚ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½`ï¿½ï¿½ï¿½êŽžï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				{
 					g_patch_fast_gradradation_flag	^= 1;
 				}
@@ -984,7 +984,7 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 		case WM_USER:
 			if(g_patch_fast_dialog_checkflg & 1){
 				char tmp[128];
-				sprintf(tmp, "ŽÀsŽžŠÔŒv‘ª - %dms", g_patch_fast_dialog_time);
+				sprintf(tmp, "ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÔŒvï¿½ï¿½ - %dms", g_patch_fast_dialog_time);
 				SetWindowText(GetDlgItem(hwnd, IDC_CTL2), tmp);
 			}
 			return FALSE;
@@ -995,12 +995,12 @@ BOOL func_WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam, void *e
 	return FALSE;
 }
 /**************************************************************
-	’²¸—pŠÖ”
+	ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Öï¿½
 
-	Žå‚ÉŠg’£•ÒW‚Ì“®ì’²¸—p‚ÌŠÖ”ŒQ
-	’Êí‚ÍŽg‚í‚ê‚È‚¢
+	ï¿½ï¿½ÉŠgï¿½ï¿½ï¿½ÒWï¿½Ì“ï¿½ï¿½ì’²ï¿½ï¿½ï¿½pï¿½ÌŠÖï¿½ï¿½Q
+	ï¿½Êï¿½ÍŽgï¿½ï¿½ï¿½È‚ï¿½
 
-	IAT‚ð•ÏX‚µ‚ÄƒtƒbƒN‚µ‚½‚è‚Æ‚©
+	IATï¿½ï¿½ÏXï¿½ï¿½ï¿½Äƒtï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
 **************************************************************/
 #if 0
 /*
@@ -1022,18 +1022,18 @@ void GetWndName(const char *fname, HWND hWnd){
 	printf("%s 0x%X(%s) ", fname, hWnd, text);
 }
 /**************************************************************
-	ƒXƒ^ƒbƒN’²¸—pŠÖ”
-	RtlCaptureStackBackTrace‚ªŽg‚¢•¨‚É‚È‚ç‚È‚¢‚Ì‚Å
-	ƒXƒ^ƒbƒN‚©‚çƒŠƒ^[ƒ“ƒAƒhƒŒƒX‚ð’Šo‚·‚é
+	ï¿½Xï¿½^ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Öï¿½
+	RtlCaptureStackBackTraceï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½È‚ï¿½ï¿½Ì‚ï¿½
+	ï¿½Xï¿½^ï¿½bï¿½Nï¿½ï¿½ï¿½çƒŠï¿½^ï¿½[ï¿½ï¿½ï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ð’Šoï¿½ï¿½ï¿½ï¿½
 **************************************************************/
 void GetStackTraceStack(){
 	DWORD i 	= 1;
 	DWORD *p	= (DWORD *)&i;
-	int lim	= (0x330000 - (DWORD)p) >> 2;//ƒeƒLƒg[
+	int lim	= (0x330000 - (DWORD)p) >> 2;//ï¿½eï¿½Lï¿½gï¿½[
 	printf("p:[%X][%d]\r\n", p, lim);
 	for(; i < lim; ++i){
-	//	if(p[i] >= 0x10000001 && p[i] <= 0x1009909e){//ƒR[ƒh”ÍˆÍ
-		if(p[i] >= 0x10000001 && p[i] <= 0x100a80cf){//ƒR[ƒh”ÍˆÍ93rc1
+	//	if(p[i] >= 0x10000001 && p[i] <= 0x1009909e){//ï¿½Rï¿½[ï¿½hï¿½Íˆï¿½
+		if(p[i] >= 0x10000001 && p[i] <= 0x100a80cf){//ï¿½Rï¿½[ï¿½hï¿½Íˆï¿½93rc1
 			printf("%X ", p[i]);
 		}
 	}
@@ -1129,7 +1129,7 @@ BOOL __stdcall InvalidateRgnHACK(HWND hWnd , HRGN hRgn , BOOL bErase){
 	printf("InvalidateRgnHACK 0x%X\r\n", hWnd);
 	return TRUE;
 }
-void stacktrace(){//ãŽè‚­s‚©‚È‚©‚Á‚½
+void stacktrace(){//ï¿½ï¿½è‚­ï¿½sï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½
 	if(csbproc != NULL){
 		WORD i = 1;
 		void *stack[50];
@@ -1158,8 +1158,8 @@ void vp_page(DWORD old){
 	}
 }
 /*
-IAT‚ÌƒnƒbƒN
-˜—ñ‚Íobjdump‚Å
+IATï¿½Ìƒnï¿½bï¿½N
+ï¿½ï¿½ï¿½ï¿½ï¿½objdumpï¿½ï¿½
 */
 BOOL HackFuncBase(HMODULE exedit, DWORD address, DWORD index, DWORD *newfunc){
 	DWORD funcpos		= address + (4 * index);
